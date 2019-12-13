@@ -1,5 +1,14 @@
--- greyhole ugen
--- as a norns engine
+-- greyhole, but for
+--                  norns
+--
+-- ----------
+--
+-- key1 = alt
+-- enc1 = time
+-- enc2 = size
+-- enc3 = damp
+-- alt + enc2 = diff
+-- alt + enc3 = feedback
 --
 --
 -- @justmat
