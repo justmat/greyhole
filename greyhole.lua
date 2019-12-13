@@ -6,8 +6,9 @@
 
 engine.name = "Greyhole"
 
-local lfo = include("lib/hnds_greyhole")
+local alt = false
 
+local lfo = include("lib/hnds_greyhole")
 local lfo_targets = {
   "none",
   "time",
