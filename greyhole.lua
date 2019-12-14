@@ -11,7 +11,7 @@
 -- alt + enc2 = diff
 -- alt + enc3 = feedback
 --
---
+-- https://llllllll.co/t/27687
 -- @justmat
 
 engine.name = "Greyhole"
