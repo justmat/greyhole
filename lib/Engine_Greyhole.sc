@@ -14,7 +14,7 @@ Engine_Greyhole : CroneEngine {
 
   alloc {
     SynthDef(\Greyhole, {
-      arg inL, inR, out, delayTime=2.0, damp=0.1, size=3.0, diff=0.7, feedback=0.2, modDepth=0.0, modFreq=0.1;
+      arg out, delayTime=2.0, damp=0.1, size=3.0, diff=0.7, feedback=0.2, modDepth=0.0, modFreq=0.1;
       var sig = {
         Greyhole.ar(SoundIn.ar([0,1]),
           delayTime,
@@ -33,8 +33,6 @@ Engine_Greyhole : CroneEngine {
     context.server.sync;
 
     synth = Synth.new(\Greyhole, [
-      \inL, context.in_b[0].index,			
-      \inR, context.in_b[1].index,
       \out, context.out_b.index,
       \delayTime, 2.0,
       \damp, 0.1,
