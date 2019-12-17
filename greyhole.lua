@@ -38,7 +38,7 @@ function lfo.process()
     if params:get(i .. "lfo") == 2 then
       -- delay time
       if target == 2 then
-        params:set(lfo_targets[target], lfo.scale(lfo[i].slope, -1.0, 2.0, 0.0, 60.0))
+        params:set(lfo_targets[target], lfo.scale(lfo[i].slope, -1.0, 2.0, 0.00, 6.00))
       -- size
       elseif target == 3 then
         params:set(lfo_targets[target], lfo.scale(lfo[i].slope, -1.0, 2.0, 0.50, 5.00))
@@ -66,7 +66,7 @@ end
 function init()
   -- params
   -- delay time
-  params:add_control("time", "time", controlspec.new(0.0, 60.0, "lin", .01, 2.00, ""))
+  params:add_control("time", "time", controlspec.new(0.00, 6.00, "lin", 0.01, 2.00, ""))
   params:set_action("time", function(value) engine.delay_time(value) end)
   -- delay size
   params:add_control("size", "size", controlspec.new(0.5, 5.0, "lin", 0.01, 2.00, ""))
