@@ -109,19 +109,20 @@ end
 
 
 function enc(n, d)
-  if alt then
-    if n == 2 then
-      params:delta("diff", d)
-    elseif n == 3 then
-      params:delta("feedback", d)
-    end
-  else
-    if n == 1 then
-      params:delta("time", d)
-    elseif n == 2 then
-      params:delta("size", d)
-    elseif n == 3 then
-      params:delta("damp", d)
+  if n == 1 then
+    params:delta("time", d)
+    if alt then
+      if n == 2 then
+        params:delta("diff", d)
+      elseif n == 3 then
+        params:delta("feedback", d)
+      end
+    else
+      if n == 2 then
+        params:delta("size", d)
+      elseif n == 3 then
+        params:delta("damp", d)
+      end
     end
   end
 end
@@ -141,12 +142,13 @@ function redraw()
   -- controls
   screen.font_size(8)
 
-  screen.level(alt and 2 or 10)
+  
   screen.move(8, 28)
   screen.text("time:")
   screen.move(120, 28)
   screen.text_right(string.format("%.2f", params:get("time")))
 
+  screen.level(alt and 2 or 10)
   screen.move(8, 36)
   screen.text("size:  ")
   screen.move(120, 36)
