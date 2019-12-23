@@ -66,7 +66,7 @@ end
 function init()
   -- params
   -- delay time
-  params:add_control("time", "time", controlspec.new(0.00, 6.00, "lin", 0.01, 2.00, ""))
+  params:add_control("time", "time", controlspec.new(0.00, 10.00, "lin", 0.01, 2.00, ""))
   params:set_action("time", function(value) engine.delay_time(value) end)
   -- delay size
   params:add_control("size", "size", controlspec.new(0.5, 5.0, "lin", 0.01, 2.00, ""))
@@ -145,28 +145,28 @@ function redraw()
   screen.move(8, 28)
   screen.text("time:")
   screen.move(120, 28)
-  screen.text_right(params:get("time"))
+  screen.text_right(string.format("%.2f", params:get("time")))
 
   screen.move(8, 36)
   screen.text("size:  ")
   screen.move(120, 36)
-  screen.text_right(params:get("size"))
+  screen.text_right(string.format("%.2f", params:get("size")))
 
   screen.move(8, 44)
   screen.text("damp:  ")
   screen.move(120, 44)
-  screen.text_right(params:get("damp"))
+  screen.text_right(string.format("%.2f", params:get("damp")))
 
   screen.level(alt and 10 or 2)
   screen.move(8, 52)
   screen.text("diff:  ")
   screen.move(120, 52)
-  screen.text_right(params:get("diff"))
+  screen.text_right(string.format("%.2f", params:get("diff")))
 
   screen.move(8, 60)
   screen.text("fdbk:  ")
   screen.move(120, 60)
-  screen.text_right(params:get("feedback"))
+  screen.text_right(string.format("%.2f", params:get("feedback")))
 
   screen.update()
 end
