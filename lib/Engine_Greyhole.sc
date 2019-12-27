@@ -1,11 +1,5 @@
 Engine_Greyhole : CroneEngine {
-  var delayTime;
-  var damp;
-  var size;
-  var diff;
-  var feedback;
-  var modDepth;
-  var modFreq;
+
   var <synth;
   
   *new { arg context, doneCallback;
