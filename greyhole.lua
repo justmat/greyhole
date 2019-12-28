@@ -111,22 +111,21 @@ end
 function enc(n, d)
   if n == 1 then
     params:delta("time", d)
-    if alt then
-      if n == 2 then
-        params:delta("diff", d)
-      elseif n == 3 then
-        params:delta("feedback", d)
-      end
-    else
-      if n == 2 then
-        params:delta("size", d)
-      elseif n == 3 then
-        params:delta("damp", d)
-      end
+  end
+  if alt then
+    if n == 2 then
+      params:delta("diff", d)
+    elseif n == 3 then
+      params:delta("feedback", d)
+    end
+  else
+    if n == 2 then
+      params:delta("size", d)
+    elseif n == 3 then
+      params:delta("damp", d)
     end
   end
 end
-
 
 
 function redraw()
